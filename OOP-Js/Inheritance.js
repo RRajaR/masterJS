@@ -15,4 +15,6 @@ function Benz(type,color,engine,speed)
 Car.call(this,type,color,engine);
 this.speed = speed;
 }
+var x = new Car("Benz","Red","R500");
+x.carEngine();
 
