@@ -15,12 +15,15 @@ Car.prototype.carColor = function()
 }
 
 
+//Benz constructor
 function Benz(type,color,engine,speed)
 {
 Car.call(this,type,color,engine);
 this.speed = speed;
 }
 
+
+//Inheriting Benz from Car 
 Benz.prototype = Object.create(Car.prototype);
 Car.prototype.constructor = Car;
 
