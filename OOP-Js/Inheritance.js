@@ -9,11 +9,27 @@ Car.prototype.carEngine = function(){
 console.log("this car is having " + this.engine);
 }
 
+Car.prototype.carColor = function()
+{
+ return this.color; 
+}
+
 
 function Benz(type,color,engine,speed)
 {
 Car.call(this,type,color,engine);
 this.speed = speed;
 }
-var x = new Car("Benz","Red","R500");
-x.carEngine();
+
+Benz.prototype = Object.create(Car.prototype);
+Car.prototype.constructor = Car;
+
+Car.prototype.carEngine = function(){
+return this.engine;
+}
+
+
+var carOne = new Car("Model S3","LightGrey","Auto2400");
+console.log(carOne.carColor());   // LightGrey
+console.log(carOne.carEngine());  // Auto2400
+
