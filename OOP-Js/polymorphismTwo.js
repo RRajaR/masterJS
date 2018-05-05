@@ -1,33 +1,33 @@
-function Car(fullName) {
+function Foo(fullName) {
   this.fullName = fullName;
 }
 
-Car.prototype.display = function(){
-  console.log("this is "+this.fullName+"Car.")
+Foo.prototype.introduction = function(){
+  console.log("This is Foo method1");
 };
-Car.prototype.introduction = function(){
- console.log("Hi, I am "+this.fullName);
-};
-
-function Suv(fullName, model) {
-
-  Suv.call(this, fullName);
-   this.model = model;
-   
+Foo.prototype.display = function(){
+ console.log("Hi, I am " + this.fullName);
 };
 
-Suv.prototype = Object.create(Car.prototype); 
-Suv.prototype.constructor = Suv;
+function Bar(fullName, nickName) {
+  Foo.call(this, fullName);
+   this.nickName = nickName;
+};
+Bar.prototype = Object.create(Foo.prototype); 
+
+Bar.prototype.constructor = Bar;
 
 
-Suv.prototype.introduction= function(){
- console.log(this.fullName);
+Bar.prototype.introduction= function(){
+  console.log( this.fullName);
+};
 
-Student.prototype.display = function(){
-  console.log("overriden "+ this.fullName);
+Bar.prototype.display = function(){
+  console.log("overriden "+ this.nickName);
 };
 
 
-var carOne = new Suv("Bentley");
-caOne.introduction();   // Bentley
-carOne.display();  // overriden Bentley
+var One = new Bar("Htderabad","Hyd");
+One.introduction();   //Hyderabad
+One.display();       //overriden Hyd
+
