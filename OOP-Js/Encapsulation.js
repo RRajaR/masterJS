@@ -14,6 +14,7 @@ function Person()
   return this;
 }
 
-var boone = new Person();
-var boone = aPerson.name;  //undefined
-var boone = aPerson.getName();  //Megan
+var a = new Person();
+
+a.getHeight();  //68
+a.height;     // undefined
