@@ -2,9 +2,14 @@ function Foo(fullName) {
   this.fullName = fullName;
 }
 
-Foo.prototype.introduction = function(){
+Foo.prototype.introduction = function(a,b){
   console.log("This is Foo method1");
 };
+
+Foo.prototype.introduction = function(a,b,c){
+console.log("hekoo");                                            //overloading isn't working
+}
+
 Foo.prototype.display = function(){
  console.log("Hi, I am " + this.fullName);
 };
@@ -18,7 +23,7 @@ Bar.prototype = Object.create(Foo.prototype);
 Bar.prototype.constructor = Bar;
 
 
-Bar.prototype.introduction= function(){
+Bar.prototype.introduction= function(a,b,c){
   console.log( this.fullName);
 };
 
@@ -29,5 +34,5 @@ Bar.prototype.display = function(){
 
 var One = new Bar("Htderabad","Hyd");
 One.introduction();   //Hyderabad
-One.display();       //overriden Hyd
+One.display();       //overriden Hyd                  //overriding 
 
