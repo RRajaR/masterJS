@@ -5,3 +5,9 @@ function addition(...a)
   else 
     return 0;
 }
+
+
+
+//-----------------------------------------------------------------------------------
+
+let addition = (...a) => a.length ? a.reduce((accumulator,currentValue) => accumulator+currentValue) : 0;
