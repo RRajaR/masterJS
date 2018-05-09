@@ -35,12 +35,15 @@ if(!$(this).val().match($regemail)){
   $(".mail").show(); } else { $(".mail").addClass("hidden"); }});
 
 //Validation for Mobile number
-let $regmobile = /^([0-9]{10})$/;
+//let $regmobile = /^([0-9]{1,10})$/;
+let $regmobile = /^[0-9]{10,10}$/;
 $(".mobile").on("keypress keydown keyup", function(){
-  if(!$(this).val().match($regemail)){
+  if(!$(this).val().match($regmobile)){
     $(".num").removeClass("hidden");
-    $(".num").show(); } else { $(".num").addClass("hidden"); }});
+    $(".num").show(); }
+     else { $(".num").addClass("hidden"); }});
 });
+
   </script>
 </head>
 <body>
@@ -57,7 +60,7 @@ $(".mobile").on("keypress keydown keyup", function(){
 </label>
 <br><br>
 <label for="mobile">Mobile: 
-  <input type="tel" class="mobile" placeholder="eg.9000012345" required>
+  <input type="text" class="mobile" placeholder="eg.9000012345" required>
   <span class="num hidden">Please Enter a Valide mobile number</span>
 </label>
 <br><br>
